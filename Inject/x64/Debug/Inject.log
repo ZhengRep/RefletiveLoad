@@ -1,0 +1,10 @@
+﻿  Inject.cpp
+E:\Vstudio2019\ReflectiveLoad\Inject\Inject.cpp(420,20): warning C4018: “<”: 有符号/无符号不匹配
+E:\Vstudio2019\ReflectiveLoad\Inject\Inject.cpp(474,6): warning C4311: “类型强制转换”: 从“WOW64CONTEXT *”到“DWORD”的指针截断
+E:\Vstudio2019\ReflectiveLoad\Inject\Inject.cpp(474,6): warning C4302: “类型强制转换”: 从“WOW64CONTEXT *”到“DWORD”截断
+  main.cpp
+E:\Vstudio2019\ReflectiveLoad\Inject\main.cpp(16,40): warning C4474: wscanf_s: 格式字符串中传递的参数太多
+E:\Vstudio2019\ReflectiveLoad\Inject\main.cpp(16,40): message : 占位符和其参数预计 1 可变参数，但提供的却是 2 参数
+E:\Vstudio2019\ReflectiveLoad\Inject\main.cpp(61,159): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据
+  正在生成代码...
+  Inject.vcxproj -> E:\Vstudio2019\ReflectiveLoad\x64\Debug\Inject.exe
