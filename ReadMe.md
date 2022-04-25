@@ -12,3 +12,45 @@
 
 实现分为注射器和加载器，注射器根据用户输入的PID，读取本地DLL文件，拷贝到目标进程空间，并调用DLL中的加载器，成功加载后通过一段ShellCode，调用DllMain。
 
+### 项目文件结构
+
+```shell
+  '    |-- Inject', //注射器
+  '    |   |-- Inject.cpp',
+  '    |   |-- Inject.h',
+  '    |   |-- Inject.vcxproj',
+  '    |   |-- Inject.vcxproj.filters',
+  '    |   |-- Inject.vcxproj.user',
+  '    |   |-- main.cpp', //调用加载器
+  '    |-- Reflective_dll', //加载器
+  '    |   |-- dllmain.cpp', //Dll Entry Point
+  '    |   |-- framework.h',
+  '    |   |-- pch.cpp',
+  '    |   |-- pch.h',
+  '    |   |-- ReflectiveLoader.cpp',
+  '    |   |-- ReflectiveLoader.h',
+  '    |   |-- Reflective_dll.vcxproj',
+  '    |   |-- Reflective_dll.vcxproj.filters',
+  '    |   |-- Reflective_dll.vcxproj.user',
+```
+
+
+
+### 项目实现细节
+
+**注射器的实现**
+
+
+
+**加载器的实现**
+
+
+
+**ShellCode的实现**
+
+
+
+## Debug
+
+1. 
+

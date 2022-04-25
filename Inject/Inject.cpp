@@ -28,7 +28,7 @@ static BYTE __FunctionX64[] =	"\xFC\x48\x89\xCE\x48\x89\xE7\x48\x83\xE4\xF0\xE8\
 								"\x00\x00\x00\x00\xEB\x0A\x48\xB8\x01\x00\x00\x00\x00\x00\x00\x00"
 								"\x48\x83\xC4\x50\x48\x89\xFC\xC3";
 
-HANDLE __stdcall LoadRemoteLibrary(HANDLE ProcessHandle, LPVOID FileData, DWORD ViewSize, LPVOID ParameterData, DWORD FunctionHash, LPVOID UserData, DWORD UserDataLength)
+HANDLE __stdcall LoadRemoteLibrary(HANDLE ProcessHandle, LPVOID FileData, DWORD FileDataLength, LPVOID ParameterData, DWORD FunctionHash, LPVOID UserData, DWORD UserDataLength)
 {
 #if defined(_WIN64)
 	DWORD CurrentArchitecture = X64;
@@ -39,7 +39,6 @@ HANDLE __stdcall LoadRemoteLibrary(HANDLE ProcessHandle, LPVOID FileData, DWORD 
 #endif
 
 	WORD TargetArchitecture;
-	DWORD FileDataLength = 0;
 	WORD DllArchitecture;
 	HANDLE ThreadHandle = NULL;
 	__try

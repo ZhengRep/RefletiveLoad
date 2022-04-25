@@ -59,26 +59,42 @@
 
 #### Questions
 
-- [ ] 动态库最后的EntryPoint的调用用ShellCode，那么说明LoadLibrary中的调用EntryPoint的方式也是ShellCode?
-- [ ] 
+- [x] 动态库最后的EntryPoint的调用用ShellCode，那么说明LoadLibrary中的调用EntryPoint的方式也是ShellCode?
+- [ ] 测试是否运行成功，再测试注射器为64，目标进程是：加载器为32或者64
+- [ ] 虚拟机无法运行Debug类型的程序，但是我现在先测Release版本
+- [ ] 为什么Inject和Loader体系架构要一样？
+- [x] 看看创建远程线程是否成功？返回ID了吗？
+- [ ] CreateRemoteThread有问题？
 
 #### Guess
 
 1. 我猜是的
+2. 如果成功会弹出"I am DllMain"
+3. 需要配置
+4. 我觉得不会
 
 #### Method
 
-1. 需要去查看LoadLibrary的源码
+1. 需要去查看LoadLibrary的源码(去分析Reactor的源码了，但是看不懂)
+2. 放到虚拟机中去运行，先写两个32位和64位的小Demo
+3. 去网上找配置方法
+4. 用VS17测试
 
 #### Record
 
-| Rank | Detial | Info |
-| ---- | ------ | ---- |
-|      |        |      |
+| Rank                                                         | Detial                                                       | Info                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![image-20220424112028200](DebugLog_init.assets/image-20220424112028200.png) | 任务管理器找到进程ID：4752                                   |                                                              |
+| ![image-20220424112601845](DebugLog_init.assets/image-20220424112601845.png) |                                                              |                                                              |
+| ![image-20220424113832966](DebugLog_init.assets/image-20220424113832966.png) | 得到系统信息                                                 | 注射器和加载器的体系架构应该一样，                           |
+| 测试远程线程的创建                                           | 返回了ID，但是主进程还是崩了，我的ShellCode有问题？ShellCode的偏移有问题，EntryPoint设置本身就有问题？CreateRemoteThread有问题？ | 刚看了一下远程线程注入的情况，我觉得这个没问题，我怀疑是我其他部分存在问题，现在我先再检查一下其他部分 |
+|                                                              | 不对，我刚才的状态有点混乱，我去看了远程线程注入，又看了一下shellcode注入，现在又想看用户层的调试（反正要解决这个bug，有点困难，目前确定就是在CreateRemoteThread中导致目标程序崩溃的) |                                                              |
 
 #### Review
 
+##### 第一次测试失败
 
+被注入的程序意外中止？
 
 #### Next
 

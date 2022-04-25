@@ -11,7 +11,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     {
     case DLL_PROCESS_ATTACH:
     {
-        MessageBox(NULL,  _T("Hello, I am Inject!"),  _T("Tips"),0);
+        MessageBox(NULL,  _T("Hello, I am DllMian!"),  _T("Tips"),0);
     }
     case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:

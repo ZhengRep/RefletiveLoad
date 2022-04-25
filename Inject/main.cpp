@@ -61,7 +61,7 @@ int _tmain(int argc, TCHAR* argv)
 	ThreadHandle = LoadRemoteLibrary(ProcessHandle, FileData, FileDataLength, NULL, MY_FUNCTION_HASH, (LPVOID)_T("911"), (_tcslen(_T("911")) + 1) * sizeof(TCHAR));
 	if (!ThreadHandle)
 	{
-		_tprintf(_T("SeLoadRemoteLibrary() Error\r\n"));
+		_tprintf(_T("LoadRemoteLibrary() Error\r\n"));
 		goto Exit;
 	}
 

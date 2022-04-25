@@ -48,7 +48,7 @@ typedef struct _WOW64CONTEXT
 HANDLE WINAPI LoadRemoteLibrary(
 	HANDLE ProcessHandle,
 	LPVOID FileData,   //Dll文件数据
-	DWORD  ViewSize,
+	DWORD  FileDataLength,
 	LPVOID ParameterData,
 	DWORD  FunctionHash,
 	LPVOID UserData,
